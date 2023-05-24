@@ -5,7 +5,7 @@ public class Curso
     private int idCurso;
 
     // Push y Commit de prueba
-    // Cambios Curso
+    // Cambios Catcita
 
-    // Prueba de nueva rama creaca "cambios_Curso"
+    // Prueba de nueva rama creaca "cambios_CatCita"
 }
