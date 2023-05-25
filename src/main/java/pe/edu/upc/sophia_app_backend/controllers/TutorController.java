@@ -30,7 +30,7 @@ public class TutorController {
             return m.map(x,TutorDTO.class);
         }).collect(Collectors.toList());
     }
-
+//delete
     @DeleteMapping("/{id}")
     public void delete(@PathVariable ("id")Integer id){
         aS.delete(id);
