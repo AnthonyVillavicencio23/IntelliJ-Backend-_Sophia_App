@@ -20,7 +20,7 @@ public class Tutor {
     private String dniTutor;
     @Column(name = "telefonoTutor", length = 10, nullable = false)
     private String telefonoTutor;
-    @Column(name = "emailTutor", length = 15, nullable = false)
+    @Column(name = "emailTutor", length = 35, nullable = false)
     private String emailTutor;
     @Column(name = "tipopersonaTutor", length = 10, nullable = false)
     private String tipopersonaTutor;
