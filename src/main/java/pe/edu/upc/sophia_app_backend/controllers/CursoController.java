@@ -1,5 +1,6 @@
 package pe.edu.upc.sophia_app_backend.controllers;
 
+import io.swagger.models.Model;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -36,4 +37,29 @@ public class CursoController
             return  m.map(x, CursoDTO.class);
         }).collect(Collectors.toList());
     }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable("id")Integer id)
+    {
+        cS.delete(id);
+    }
+
+    @GetMapping("/{id}")
+    public CursoDTO listId(@PathVariable("id")Integer id)
+    {
+        ModelMapper m = new ModelMapper();
+        CursoDTO dto = m.map(cS.listId(id), CursoDTO.class );
+
+        return dto;
+    }
+
+    @PutMapping
+    public void goUpdate(@RequestBody CursoDTO dto)
+    {
+        ModelMapper m = new ModelMapper();
+        Curso c = m.map(dto, Curso.class);
+
+        cS.insert(c);
+    }
+
 }

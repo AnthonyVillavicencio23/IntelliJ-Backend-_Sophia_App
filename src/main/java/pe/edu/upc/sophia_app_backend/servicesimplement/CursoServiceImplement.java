@@ -25,4 +25,16 @@ public class CursoServiceImplement implements ICursoService
     {
         return cR.findAll();
     }
+
+    @Override
+    public void delete(int idCurso)
+    {
+        cR.deleteById(idCurso);
+    }
+
+    @Override
+    public Curso listId(int idCurso)
+    {
+        return cR.findById(idCurso).orElse(new Curso());
+    }
 }
