@@ -41,7 +41,7 @@ public class EstadoController {
         EstadoDTO dto=m.map(eS.listId(id),EstadoDTO.class);
         return dto;
     }
-
+//Estado
     @PutMapping
     public void goUpdate(@RequestBody EstadoDTO dto){
         ModelMapper m= new ModelMapper();
