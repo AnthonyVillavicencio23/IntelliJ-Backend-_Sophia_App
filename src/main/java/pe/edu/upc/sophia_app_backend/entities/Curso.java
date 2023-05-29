@@ -6,6 +6,7 @@ import javax.persistence.*;
 @Table(name = "curso")
 public class Curso
 {
+    //Nuevos cambios estado
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idCurso;
