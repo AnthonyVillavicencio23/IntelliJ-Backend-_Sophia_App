@@ -18,30 +18,30 @@ public class Estudiante
     @Column(name = "fechaNacimientoEstudiante", nullable = false)
     private LocalDate fechaNacimientoEstudiante;
 
-    @Column(name = "apellidoPatEstudiante",length = 40,nullable = false)
-    private String apellidoPatEstudiante;
+    @Column(name = "apPatEstudiante",length = 40,nullable = false)
+    private String apPatEstudiante;
 
-    @Column(name = "apellidoMatEstudiante",length = 40,nullable = false)
-    private String apellidoMatEstudiante;
+    @Column(name = "apMatEstudiante",length = 40,nullable = false)
+    private String apMatEstudiante;
 
     @Column(name = "dniEstudiante",length = 8,nullable = false)
     private String dniEstudiante;
 
     @ManyToOne
     @JoinColumn(name = "idTutor")
-    private Tutor idTutor;
+    private Tutor tutor;
 
     public Estudiante() {
     }
 
-    public Estudiante(int idEstudiante, String nombreEstudiante, LocalDate fechaNacimientoEstudiante, String apellidoPatEstudiante, String apellidoMatEstudiante, String dniEstudiante, Tutor idTutor) {
+    public Estudiante(int idEstudiante, String nombreEstudiante, LocalDate fechaNacimientoEstudiante, String apPatEstudiante, String apMatEstudiante, String dniEstudiante, Tutor tutor) {
         this.idEstudiante = idEstudiante;
         this.nombreEstudiante = nombreEstudiante;
         this.fechaNacimientoEstudiante = fechaNacimientoEstudiante;
-        this.apellidoPatEstudiante = apellidoPatEstudiante;
-        this.apellidoMatEstudiante = apellidoMatEstudiante;
+        this.apPatEstudiante = apPatEstudiante;
+        this.apMatEstudiante = apMatEstudiante;
         this.dniEstudiante = dniEstudiante;
-        this.idTutor = idTutor;
+        this.tutor = tutor;
     }
 
     public int getIdEstudiante() {
@@ -68,20 +68,20 @@ public class Estudiante
         this.fechaNacimientoEstudiante = fechaNacimientoEstudiante;
     }
 
-    public String getApellidoPatEstudiante() {
-        return apellidoPatEstudiante;
+    public String getApPatEstudiante() {
+        return apPatEstudiante;
     }
 
-    public void setApellidoPatEstudiante(String apellidoPatEstudiante) {
-        this.apellidoPatEstudiante = apellidoPatEstudiante;
+    public void setApPatEstudiante(String apPatEstudiante) {
+        this.apPatEstudiante = apPatEstudiante;
     }
 
-    public String getApellidoMatEstudiante() {
-        return apellidoMatEstudiante;
+    public String getApMatEstudiante() {
+        return apMatEstudiante;
     }
 
-    public void setApellidoMatEstudiante(String apellidoMatEstudiante) {
-        this.apellidoMatEstudiante = apellidoMatEstudiante;
+    public void setApMatEstudiante(String apMatEstudiante) {
+        this.apMatEstudiante = apMatEstudiante;
     }
 
     public String getDniEstudiante() {
@@ -92,11 +92,11 @@ public class Estudiante
         this.dniEstudiante = dniEstudiante;
     }
 
-    public Tutor getIdTutor() {
-        return idTutor;
+    public Tutor getTutor() {
+        return tutor;
     }
 
-    public void setIdTutor(Tutor idTutor) {
-        this.idTutor = idTutor;
+    public void setTutor(Tutor tutor) {
+        this.tutor = tutor;
     }
 }
