@@ -1,22 +1,22 @@
 package pe.edu.upc.sophia_app_backend.dtos;
 
 public class TutorDTO {
-    private int idTutor;
+    private int id;
     private String nombreTutor;
     private String apellidoPatTutor;
     private String apellidoMatTutor;
     private String dniTutor;
-    private String telefonoTutor;
-    private String emailTutor;
-    private String tipopersonaTutor;
+    private String telefono;
+    private String email;
+    private String tipopersona;
 
 
-    public int getIdTutor() {
-        return idTutor;
+    public int getId() {
+        return id;
     }
 
-    public void setIdTutor(int idTutor) {
-        this.idTutor = idTutor;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNombreTutor() {
@@ -51,27 +51,27 @@ public class TutorDTO {
         this.dniTutor = dniTutor;
     }
 
-    public String getTelefonoTutor() {
-        return telefonoTutor;
+    public String getTelefono() {
+        return telefono;
     }
 
-    public void setTelefonoTutor(String telefonoTutor) {
-        this.telefonoTutor = telefonoTutor;
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
-    public String getEmailTutor() {
-        return emailTutor;
+    public String getEmail() {
+        return email;
     }
 
-    public void setEmailTutor(String emailTutor) {
-        this.emailTutor = emailTutor;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getTipopersonaTutor() {
-        return tipopersonaTutor;
+    public String getTipopersona() {
+        return tipopersona;
     }
 
-    public void setTipopersonaTutor(String tipopersonaTutor) {
-        this.tipopersonaTutor = tipopersonaTutor;
+    public void setTipopersona(String tipopersona) {
+        this.tipopersona = tipopersona;
     }
 }
