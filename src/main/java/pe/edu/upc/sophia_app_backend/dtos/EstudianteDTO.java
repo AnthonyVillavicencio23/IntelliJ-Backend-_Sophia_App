@@ -2,18 +2,26 @@ package pe.edu.upc.sophia_app_backend.dtos;
 
 import pe.edu.upc.sophia_app_backend.entities.Tutor;
 
+import javax.persistence.Column;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import java.time.LocalDate;
 
 public class EstudianteDTO
 {
 
     private int idEstudiante;
+
     private String nombreEstudiante;
+
     private LocalDate fechaNacimientoEstudiante;
-    private String apellidoPatEstudiante;
-    private String apellidoMatEstudiante;
+
+    private String apPatEstudiante;
+
+    private String apMatEstudiante;
+
     private String dniEstudiante;
-    private Tutor idTutor;
+    private Tutor tutor;
 
     public int getIdEstudiante() {
         return idEstudiante;
@@ -39,20 +47,20 @@ public class EstudianteDTO
         this.fechaNacimientoEstudiante = fechaNacimientoEstudiante;
     }
 
-    public String getApellidoPatEstudiante() {
-        return apellidoPatEstudiante;
+    public String getApPatEstudiante() {
+        return apPatEstudiante;
     }
 
-    public void setApellidoPatEstudiante(String apellidoPatEstudiante) {
-        this.apellidoPatEstudiante = apellidoPatEstudiante;
+    public void setApPatEstudiante(String apPatEstudiante) {
+        this.apPatEstudiante = apPatEstudiante;
     }
 
-    public String getApellidoMatEstudiante() {
-        return apellidoMatEstudiante;
+    public String getApMatEstudiante() {
+        return apMatEstudiante;
     }
 
-    public void setApellidoMatEstudiante(String apellidoMatEstudiante) {
-        this.apellidoMatEstudiante = apellidoMatEstudiante;
+    public void setApMatEstudiante(String apMatEstudiante) {
+        this.apMatEstudiante = apMatEstudiante;
     }
 
     public String getDniEstudiante() {
@@ -63,11 +71,11 @@ public class EstudianteDTO
         this.dniEstudiante = dniEstudiante;
     }
 
-    public Tutor getIdTutor() {
-        return idTutor;
+    public Tutor getTutor() {
+        return tutor;
     }
 
-    public void setIdTutor(Tutor idTutor) {
-        this.idTutor = idTutor;
+    public void setTutor(Tutor tutor) {
+        this.tutor = tutor;
     }
 }
