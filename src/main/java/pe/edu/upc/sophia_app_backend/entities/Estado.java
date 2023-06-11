@@ -9,15 +9,15 @@ public class Estado {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private int idEstado;
-    @Column(name = "descripcion",length = 60,nullable = false)
-    private String descripcion;
+    @Column(name = "description",length = 60,nullable = false)
+    private String description;
 
     public Estado() {
     }
 
-    public Estado(int idEstado, String descripcion) {
+    public Estado(int idEstado, String description) {
         this.idEstado = idEstado;
-        this.descripcion = descripcion;
+        this.description = description;
     }
 
     public int getIdEstado() {
@@ -28,11 +28,11 @@ public class Estado {
         this.idEstado = idEstado;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

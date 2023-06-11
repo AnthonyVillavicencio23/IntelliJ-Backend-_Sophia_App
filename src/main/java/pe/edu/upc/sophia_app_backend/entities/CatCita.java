@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class CatCita {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int idcatCita;
     @Column(name="nombreCita", length = 60, nullable = false)
     private String nombreCita;
     @Column(name="descripcionCita", length = 300, nullable = false)
@@ -16,18 +16,18 @@ public class CatCita {
     public CatCita() {
     }
 
-    public CatCita(int id, String nombreCita, String descripcionCita) {
-        this.id = id;
+    public CatCita(int idcatCita, String nombreCita, String descripcionCita) {
+        this.idcatCita = idcatCita;
         this.nombreCita = nombreCita;
         this.descripcionCita = descripcionCita;
     }
 
-    public int getId() {
-        return id;
+    public int getIdcatCita() {
+        return idcatCita;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdcatCita(int idcatCita) {
+        this.idcatCita = idcatCita;
     }
 
     public String getNombreCita() {
