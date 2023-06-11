@@ -27,14 +27,14 @@ public class CursoServiceImplement implements ICursoService
     }
 
     @Override
-    public void delete(int idCurso)
+    public void delete(int idcurso)
     {
-        cR.deleteById(idCurso);
+        cR.deleteById(idcurso);
     }
 
     @Override
-    public Curso listId(int idCurso)
+    public Curso listId(int idcurso)
     {
-        return cR.findById(idCurso).orElse(new Curso());
+        return cR.findById(idcurso).orElse(new Curso());
     }
 }
