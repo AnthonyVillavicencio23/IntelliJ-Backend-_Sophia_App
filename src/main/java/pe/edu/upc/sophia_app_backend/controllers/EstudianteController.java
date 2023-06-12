@@ -3,6 +3,7 @@ package pe.edu.upc.sophia_app_backend.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.sophia_app_backend.dtos.EstudianteDTO;
 import pe.edu.upc.sophia_app_backend.entities.Estudiante;
@@ -29,6 +30,7 @@ public class EstudianteController
     }
 
     @GetMapping
+    @PreAuthorize("hasAuthority('ADMIN')")
     public List<EstudianteDTO> list()
     {
         return eS.list().stream().map(x ->
