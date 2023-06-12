@@ -1,16 +1,16 @@
 package pe.edu.upc.sophia_app_backend.dtos;
 
 public class CatcitaDTO {
-    private int id;
+    private int idcatCita;
     private String nombreCita;
     private String descripcionCita;
 
-    public int getId() {
-        return id;
+    public int getIdcatCita() {
+        return idcatCita;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdcatCita(int idcatCita) {
+        this.idcatCita = idcatCita;
     }
 
     public String getNombreCita() {

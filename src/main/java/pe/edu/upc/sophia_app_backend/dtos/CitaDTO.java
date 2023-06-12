@@ -10,13 +10,13 @@ import java.time.LocalDate;
 public class CitaDTO {
 
     private int idCita;
-    private String disponibleCita;
-    private LocalDate fechaCita;
-    private String horaCita;
-    private CatCita id;
-    private Estudiante idEstudiante;
-    private Psicologo idPsicologo;
-    private Estado idEstado;
+    private String disponible;
+    private LocalDate fecha;
+    private String hora;
+    private CatCita catCita;
+    private Estudiante estudiante;
+    private Psicologo psicologo;
+    private Estado estado;
 
     public int getIdCita() {
         return idCita;
@@ -26,59 +26,59 @@ public class CitaDTO {
         this.idCita = idCita;
     }
 
-    public String getDisponibleCita() {
-        return disponibleCita;
+    public String getDisponible() {
+        return disponible;
     }
 
-    public void setDisponibleCita(String disponibleCita) {
-        this.disponibleCita = disponibleCita;
+    public void setDisponible(String disponible) {
+        this.disponible = disponible;
     }
 
-    public LocalDate getFechaCita() {
-        return fechaCita;
+    public LocalDate getFecha() {
+        return fecha;
     }
 
-    public void setFechaCita(LocalDate fechaCita) {
-        this.fechaCita = fechaCita;
+    public void setFecha(LocalDate fecha) {
+        this.fecha = fecha;
     }
 
-    public String getHoraCita() {
-        return horaCita;
+    public String getHora() {
+        return hora;
     }
 
-    public void setHoraCita(String horaCita) {
-        this.horaCita = horaCita;
+    public void setHora(String hora) {
+        this.hora = hora;
     }
 
-    public CatCita getId() {
-        return id;
+    public CatCita getCatCita() {
+        return catCita;
     }
 
-    public void setId(CatCita id) {
-        this.id = id;
+    public void setCatCita(CatCita catCita) {
+        this.catCita = catCita;
     }
 
-    public Estudiante getIdEstudiante() {
-        return idEstudiante;
+    public Estudiante getEstudiante() {
+        return estudiante;
     }
 
-    public void setIdEstudiante(Estudiante idEstudiante) {
-        this.idEstudiante = idEstudiante;
+    public void setEstudiante(Estudiante estudiante) {
+        this.estudiante = estudiante;
     }
 
-    public Psicologo getIdPsicologo() {
-        return idPsicologo;
+    public Psicologo getPsicologo() {
+        return psicologo;
     }
 
-    public void setIdPsicologo(Psicologo idPsicologo) {
-        this.idPsicologo = idPsicologo;
+    public void setPsicologo(Psicologo psicologo) {
+        this.psicologo = psicologo;
     }
 
-    public Estado getIdEstado() {
-        return idEstado;
+    public Estado getEstado() {
+        return estado;
     }
 
-    public void setIdEstado(Estado idEstado) {
-        this.idEstado = idEstado;
+    public void setEstado(Estado estado) {
+        this.estado = estado;
     }
 }

@@ -9,45 +9,44 @@ public class Cita {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idCita;
-    @Column(name = "disponibleCita",length = 40,nullable = false)
-    private String disponibleCita;
-    @Column(name = "fechaCita", nullable = false)
-    private LocalDate fechaCita;
-    @Column(name = "horaCita",length = 30,nullable = false)
-    private String horaCita;
+    @Column(name = "disponible",length = 40,nullable = false)
+    private String disponible;
+    @Column(name = "fecha", nullable = false)
+    private LocalDate fecha;
+    @Column(name = "hora",length = 30,nullable = false)
+    private String hora;
 
 
 
 
     @ManyToOne
-    @JoinColumn(name = "id")
-    private CatCita id;
+    @JoinColumn(name = "idcatCita")
+    private CatCita catCita;
 
     @ManyToOne
     @JoinColumn(name = "idEstudiante")
-    private Estudiante idEstudiante;
+    private Estudiante estudiante;
 
     @ManyToOne
     @JoinColumn(name = "idPsicologo")
-    private Psicologo idPsicologo;
+    private Psicologo psicologo;
 
     @ManyToOne
     @JoinColumn(name = "idEstado")
-    private Estado idEstado;
-
+    private Estado estado;
 
     public Cita() {
     }
 
-    public Cita(int idCita, String disponibleCita, LocalDate fechaCita, String horaCita, CatCita id, Estudiante idEstudiante, Psicologo idPsicologo, Estado idEstado) {
+    public Cita(int idCita, String disponible, LocalDate fecha, String hora, CatCita catCita, Estudiante estudiante, Psicologo psicologo, Estado estado) {
         this.idCita = idCita;
-        this.disponibleCita = disponibleCita;
-        this.fechaCita = fechaCita;
-        this.horaCita = horaCita;
-        this.id = id;
-        this.idEstudiante = idEstudiante;
-        this.idPsicologo = idPsicologo;
-        this.idEstado = idEstado;
+        this.disponible = disponible;
+        this.fecha = fecha;
+        this.hora = hora;
+        this.catCita = catCita;
+        this.estudiante = estudiante;
+        this.psicologo = psicologo;
+        this.estado = estado;
     }
 
     public int getIdCita() {
@@ -58,59 +57,59 @@ public class Cita {
         this.idCita = idCita;
     }
 
-    public String getDisponibleCita() {
-        return disponibleCita;
+    public String getDisponible() {
+        return disponible;
     }
 
-    public void setDisponibleCita(String disponibleCita) {
-        this.disponibleCita = disponibleCita;
+    public void setDisponible(String disponible) {
+        this.disponible = disponible;
     }
 
-    public LocalDate getFechaCita() {
-        return fechaCita;
+    public LocalDate getFecha() {
+        return fecha;
     }
 
-    public void setFechaCita(LocalDate fechaCita) {
-        this.fechaCita = fechaCita;
+    public void setFecha(LocalDate fecha) {
+        this.fecha = fecha;
     }
 
-    public String getHoraCita() {
-        return horaCita;
+    public String getHora() {
+        return hora;
     }
 
-    public void setHoraCita(String horaCita) {
-        this.horaCita = horaCita;
+    public void setHora(String hora) {
+        this.hora = hora;
     }
 
-    public CatCita getId() {
-        return id;
+    public CatCita getCatCita() {
+        return catCita;
     }
 
-    public void setId(CatCita id) {
-        this.id = id;
+    public void setCatCita(CatCita catCita) {
+        this.catCita = catCita;
     }
 
-    public Estudiante getIdEstudiante() {
-        return idEstudiante;
+    public Estudiante getEstudiante() {
+        return estudiante;
     }
 
-    public void setIdEstudiante(Estudiante idEstudiante) {
-        this.idEstudiante = idEstudiante;
+    public void setEstudiante(Estudiante estudiante) {
+        this.estudiante = estudiante;
     }
 
-    public Psicologo getIdPsicologo() {
-        return idPsicologo;
+    public Psicologo getPsicologo() {
+        return psicologo;
     }
 
-    public void setIdPsicologo(Psicologo idPsicologo) {
-        this.idPsicologo = idPsicologo;
+    public void setPsicologo(Psicologo psicologo) {
+        this.psicologo = psicologo;
     }
 
-    public Estado getIdEstado() {
-        return idEstado;
+    public Estado getEstado() {
+        return estado;
     }
 
-    public void setIdEstado(Estado idEstado) {
-        this.idEstado = idEstado;
+    public void setEstado(Estado estado) {
+        this.estado = estado;
     }
 }

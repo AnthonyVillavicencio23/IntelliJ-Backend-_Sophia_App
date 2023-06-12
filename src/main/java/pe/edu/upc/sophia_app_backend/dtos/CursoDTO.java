@@ -2,31 +2,31 @@ package pe.edu.upc.sophia_app_backend.dtos;
 
 public class CursoDTO
 {
-    private  int idCurso;
-    private String nombreCurso;
-    private  int cantidadCurso;
+    private  int idcurso;
+    private String nameCurso;
+    private  int cantCurso;
 
-    public int getIdCurso() {
-        return idCurso;
+    public int getIdcurso() {
+        return idcurso;
     }
 
-    public void setIdCurso(int idCurso) {
-        this.idCurso = idCurso;
+    public void setIdcurso(int idcurso) {
+        this.idcurso = idcurso;
     }
 
-    public String getNombreCurso() {
-        return nombreCurso;
+    public String getNameCurso() {
+        return nameCurso;
     }
 
-    public void setNombreCurso(String nombreCurso) {
-        this.nombreCurso = nombreCurso;
+    public void setNameCurso(String nameCurso) {
+        this.nameCurso = nameCurso;
     }
 
-    public int getCantidadCurso() {
-        return cantidadCurso;
+    public int getCantCurso() {
+        return cantCurso;
     }
 
-    public void setCantidadCurso(int cantidadCurso) {
-        this.cantidadCurso = cantidadCurso;
+    public void setCantCurso(int cantCurso) {
+        this.cantCurso = cantCurso;
     }
 }

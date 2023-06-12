@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/tutores")
+@RequestMapping("/Tutor")
 public class TutorController {
     @Autowired
     private ITutorService aS;
