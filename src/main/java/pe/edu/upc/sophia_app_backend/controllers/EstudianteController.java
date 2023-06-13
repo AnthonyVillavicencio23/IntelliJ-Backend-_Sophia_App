@@ -4,9 +4,7 @@ package pe.edu.upc.sophia_app_backend.controllers;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import pe.edu.upc.sophia_app_backend.dtos.CursoDTO;
 import pe.edu.upc.sophia_app_backend.dtos.EstudianteDTO;
-import pe.edu.upc.sophia_app_backend.entities.Curso;
 import pe.edu.upc.sophia_app_backend.entities.Estudiante;
 import pe.edu.upc.sophia_app_backend.services.IEstudianteService;
 

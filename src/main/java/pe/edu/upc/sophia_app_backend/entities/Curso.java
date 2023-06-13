@@ -9,45 +9,44 @@ public class Curso
     //Nuevos cambios estado
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idCurso;
+    private int idcurso;
 
-    @Column(name = "nombreCurso", length = 50, nullable = false)
-    private String nombreCurso;
+    @Column(name = "nameCurso", length = 50, nullable = false)
+    private String nameCurso;
 
-    @Column(name = "cantidadCurso", length = 3, nullable = false)
-    private  int cantidadCurso;
+    @Column(name = "cantCurso", length = 3, nullable = false)
+    private  int cantCurso;
 
-    public Curso()
-    {
+    public Curso() {
     }
 
-    public Curso(int idCurso, String nombreCurso, int cantidadCurso) {
-        this.idCurso = idCurso;
-        this.nombreCurso = nombreCurso;
-        this.cantidadCurso = cantidadCurso;
+    public Curso(int idcurso, String nameCurso, int cantCurso) {
+        this.idcurso = idcurso;
+        this.nameCurso = nameCurso;
+        this.cantCurso = cantCurso;
     }
 
-    public int getIdCurso() {
-        return idCurso;
+    public int getIdcurso() {
+        return idcurso;
     }
 
-    public void setIdCurso(int idCurso) {
-        this.idCurso = idCurso;
+    public void setIdcurso(int idcurso) {
+        this.idcurso = idcurso;
     }
 
-    public String getNombreCurso() {
-        return nombreCurso;
+    public String getNameCurso() {
+        return nameCurso;
     }
 
-    public void setNombreCurso(String nombreCurso) {
-        this.nombreCurso = nombreCurso;
+    public void setNameCurso(String nameCurso) {
+        this.nameCurso = nameCurso;
     }
 
-    public int getCantidadCurso() {
-        return cantidadCurso;
+    public int getCantCurso() {
+        return cantCurso;
     }
 
-    public void setCantidadCurso(int cantidadCurso) {
-        this.cantidadCurso = cantidadCurso;
+    public void setCantCurso(int cantCurso) {
+        this.cantCurso = cantCurso;
     }
 }

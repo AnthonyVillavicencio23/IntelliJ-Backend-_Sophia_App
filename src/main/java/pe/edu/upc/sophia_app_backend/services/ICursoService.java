@@ -8,7 +8,7 @@ public interface ICursoService
     public void insert(Curso curso);
     List<Curso> list();
 
-    public void delete(int idCurso);
+    public void delete(int idcurso);
 
-    public Curso listId(int idCurso);
+    public Curso listId(int idcurso);
 }
