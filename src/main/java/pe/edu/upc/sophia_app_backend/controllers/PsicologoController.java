@@ -2,6 +2,7 @@ package pe.edu.upc.sophia_app_backend.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.sophia_app_backend.dtos.PsicologoDTO;
 import pe.edu.upc.sophia_app_backend.entities.Psicologo;
@@ -17,6 +18,7 @@ public class PsicologoController {
     private IPsicologoService aS;
 
     @PostMapping
+    @PreAuthorize("hasAnyAuthority('ADMIN')")
     public void insert(@RequestBody PsicologoDTO dto) {
         ModelMapper m = new ModelMapper();
         Psicologo a = m.map(dto, Psicologo.class);
@@ -24,6 +26,7 @@ public class PsicologoController {
     }
 
     @GetMapping
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'TUTOR', 'ESTUDIANTE')")
     public List<PsicologoDTO> list() {
         return aS.list().stream().map(x->{
             ModelMapper m = new ModelMapper();

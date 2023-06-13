@@ -2,6 +2,7 @@ package pe.edu.upc.sophia_app_backend.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.sophia_app_backend.dtos.ModuloDTO;
 import pe.edu.upc.sophia_app_backend.entities.Modulo;
@@ -17,6 +18,7 @@ public class ModuloController {
     private IModuloService mS;
 
     @PostMapping
+    @PreAuthorize("hasAnyAuthority('ADMIN')")
     public void insert (@RequestBody ModuloDTO dto)
     {
         ModelMapper m = new ModelMapper();
@@ -26,6 +28,7 @@ public class ModuloController {
     }
 
     @GetMapping
+    @PreAuthorize("hasAnyAuthority('ADMIN')")
     public List<ModuloDTO> list()
     {
         return mS.list().stream().map(x ->

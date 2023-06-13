@@ -21,6 +21,7 @@ public class EstudianteController
     private IEstudianteService eS;
 
     @PostMapping
+    @PreAuthorize("hasAnyAuthority('ADMIN, TUTOR')")
     public void insert (@RequestBody EstudianteDTO dto)
     {
         ModelMapper m = new ModelMapper();
@@ -30,7 +31,7 @@ public class EstudianteController
     }
 
     @GetMapping
-    @PreAuthorize("hasAuthority('ADMIN')")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'PSICOLOGO')")
     public List<EstudianteDTO> list()
     {
         return eS.list().stream().map(x ->
