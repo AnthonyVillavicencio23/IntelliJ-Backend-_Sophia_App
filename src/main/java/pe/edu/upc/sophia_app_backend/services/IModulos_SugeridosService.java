@@ -8,4 +8,6 @@ public interface IModulos_SugeridosService
 {
     public void insert(Modulos_Sugeridos modulos_sugeridos);
     List<Modulos_Sugeridos> list();
+    public void delete(int idmodulossugeridos);
+    public Modulos_Sugeridos listId(int idmodulossugeridos);
 }

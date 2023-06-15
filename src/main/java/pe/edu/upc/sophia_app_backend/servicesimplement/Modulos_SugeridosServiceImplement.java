@@ -25,4 +25,16 @@ public class Modulos_SugeridosServiceImplement implements IModulos_SugeridosServ
     {
         return mdR.findAll();
     }
+
+    @Override
+    public void delete(int idmodulossugeridos)
+    {
+        mdR.deleteById(idmodulossugeridos);
+
+    }
+
+    @Override
+    public Modulos_Sugeridos listId(int idmodulossugeridos) {
+        return mdR.findById(idmodulossugeridos).orElse(new Modulos_Sugeridos());
+    }
 }

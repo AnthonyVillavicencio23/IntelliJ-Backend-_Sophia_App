@@ -3,9 +3,7 @@ package pe.edu.upc.sophia_app_backend.controllers;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import pe.edu.upc.sophia_app_backend.dtos.EstudianteDTO;
 import pe.edu.upc.sophia_app_backend.dtos.Modulos_SugeridosDTO;
-import pe.edu.upc.sophia_app_backend.entities.Estudiante;
 import pe.edu.upc.sophia_app_backend.entities.Modulos_Sugeridos;
 import pe.edu.upc.sophia_app_backend.services.IModulos_SugeridosService;
 
@@ -37,5 +35,30 @@ public class Modulos_SugeridosController
             return  m.map(x, Modulos_SugeridosDTO.class);
         }).collect(Collectors.toList());
     }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable("id")Integer id)
+    {
+        mdS.delete(id);
+    }
+
+    @GetMapping("/{id}")
+    public Modulos_SugeridosDTO listId(@PathVariable("id")Integer id)
+    {
+        ModelMapper m = new ModelMapper();
+        Modulos_SugeridosDTO dto = m.map(mdS.listId(id), Modulos_SugeridosDTO.class );
+
+        return dto;
+    }
+
+    @PutMapping
+    public void goUpdate(@RequestBody Modulos_SugeridosDTO dto)
+    {
+        ModelMapper m = new ModelMapper();
+        Modulos_Sugeridos c = m.map(dto, Modulos_Sugeridos.class);
+
+        mdS.insert(c);
+    }
+
 
 }

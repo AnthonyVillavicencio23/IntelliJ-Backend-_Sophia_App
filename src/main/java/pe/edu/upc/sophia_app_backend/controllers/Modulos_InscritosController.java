@@ -35,4 +35,30 @@ public class Modulos_InscritosController
             return  m.map(x, Modulos_IncritosDTO.class);
         }).collect(Collectors.toList());
     }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable("id")Integer id)
+    {
+        miS.delete(id);
+    }
+
+    @GetMapping("/{id}")
+    public Modulos_IncritosDTO listId(@PathVariable("id")Integer id)
+    {
+        ModelMapper m = new ModelMapper();
+        Modulos_IncritosDTO dto = m.map(miS.listId(id), Modulos_IncritosDTO.class );
+
+        return dto;
+    }
+
+    @PutMapping
+    public void goUpdate(@RequestBody Modulos_IncritosDTO dto)
+    {
+        ModelMapper m = new ModelMapper();
+        Modulos_Inscritos c = m.map(dto, Modulos_Inscritos.class);
+
+        miS.insert(c);
+    }
+
+
 }

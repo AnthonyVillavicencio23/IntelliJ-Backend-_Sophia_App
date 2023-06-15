@@ -25,4 +25,15 @@ public class IModulos_IncritosServiceImplement implements IModulos_InscritosServ
     public List<Modulos_Inscritos> list() {
         return miR.findAll();
     }
+
+    @Override
+    public void delete(int idmodulosinscritos)
+    {
+        miR.deleteById(idmodulosinscritos);
+    }
+    @Override
+    public Modulos_Inscritos listId(int idmodulosinscritos)
+    {
+        return miR.findById(idmodulosinscritos).orElse(new Modulos_Inscritos());
+    }
 }
