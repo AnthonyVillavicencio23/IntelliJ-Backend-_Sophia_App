@@ -3,7 +3,7 @@ package pe.edu.upc.sophia_app_backend.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name="pruebaEvaluaciones")
+@Table(name="pruebaevaluaciones")
 public class PruebaEvaluacion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

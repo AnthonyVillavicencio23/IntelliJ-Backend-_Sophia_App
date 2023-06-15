@@ -8,8 +8,8 @@ public class PruebaEvaluacionDTO {
 
     private Integer idPruebaEvaluacion;
     private Cita cita;
-    private String diagnostico;
-    private String calificacion;
+    private String diagnosticoPE;
+    private String calificacionPE;
     private Rendido rendido;
 
     public PruebaEvaluacionDTO() {
@@ -31,20 +31,20 @@ public class PruebaEvaluacionDTO {
         this.cita = cita;
     }
 
-    public String getDiagnostico() {
-        return diagnostico;
+    public String getDiagnosticoPE() {
+        return diagnosticoPE;
     }
 
-    public void setDiagnostico(String diagnostico) {
-        this.diagnostico = diagnostico;
+    public void setDiagnosticoPE(String diagnosticoPE) {
+        this.diagnosticoPE = diagnosticoPE;
     }
 
-    public String getCalificacion() {
-        return calificacion;
+    public String getCalificacionPE() {
+        return calificacionPE;
     }
 
-    public void setCalificacion(String calificacion) {
-        this.calificacion = calificacion;
+    public void setCalificacionPE(String calificacionPE) {
+        this.calificacionPE = calificacionPE;
     }
 
     public Rendido getRendido() {
