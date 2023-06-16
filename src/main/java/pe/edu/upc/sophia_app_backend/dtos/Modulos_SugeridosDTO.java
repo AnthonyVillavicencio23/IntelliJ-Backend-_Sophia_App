@@ -1,12 +1,13 @@
 package pe.edu.upc.sophia_app_backend.dtos;
 
 import pe.edu.upc.sophia_app_backend.entities.Modulo;
+import pe.edu.upc.sophia_app_backend.entities.PruebaEvaluacion;
 
 
 public class Modulos_SugeridosDTO
 {
     private int idModulosSugeridos;
-    private String pruebaevaluacion;
+    private PruebaEvaluacion pruebaevaluacion;
     private Modulo modulo;
 
     public int getIdModulosSugeridos() {
@@ -17,11 +18,11 @@ public class Modulos_SugeridosDTO
         this.idModulosSugeridos = idModulosSugeridos;
     }
 
-    public String getPruebaevaluacion() {
+    public PruebaEvaluacion getPruebaevaluacion() {
         return pruebaevaluacion;
     }
 
-    public void setPruebaevaluacion(String pruebaevaluacion) {
+    public void setPruebaevaluacion(PruebaEvaluacion pruebaevaluacion) {
         this.pruebaevaluacion = pruebaevaluacion;
     }
 

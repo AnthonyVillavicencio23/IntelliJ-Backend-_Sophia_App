@@ -10,10 +10,9 @@ public class Modulos_Sugeridos
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idModulosSugeridos;
-
-    @Column(name = "pruebaevaluacion",length = 40,nullable = false)
-    private String pruebaevaluacion;
-
+    @ManyToOne
+    @JoinColumn(name = "idPruebaEvaluacion")
+    private PruebaEvaluacion pruebaevaluacion;
     @ManyToOne
     @JoinColumn(name = "idModulo")
     private Modulo modulo;
@@ -21,7 +20,7 @@ public class Modulos_Sugeridos
     public Modulos_Sugeridos() {
     }
 
-    public Modulos_Sugeridos(int idModulosSugeridos, String pruebaevaluacion, Modulo modulo) {
+    public Modulos_Sugeridos(int idModulosSugeridos, PruebaEvaluacion pruebaevaluacion, Modulo modulo) {
         this.idModulosSugeridos = idModulosSugeridos;
         this.pruebaevaluacion = pruebaevaluacion;
         this.modulo = modulo;
@@ -35,11 +34,11 @@ public class Modulos_Sugeridos
         this.idModulosSugeridos = idModulosSugeridos;
     }
 
-    public String getPruebaevaluacion() {
+    public PruebaEvaluacion getPruebaevaluacion() {
         return pruebaevaluacion;
     }
 
-    public void setPruebaevaluacion(String pruebaevaluacion) {
+    public void setPruebaevaluacion(PruebaEvaluacion pruebaevaluacion) {
         this.pruebaevaluacion = pruebaevaluacion;
     }
 
