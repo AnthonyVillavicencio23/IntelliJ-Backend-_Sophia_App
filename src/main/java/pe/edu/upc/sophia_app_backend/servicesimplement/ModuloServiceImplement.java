@@ -19,4 +19,12 @@ public class ModuloServiceImplement implements IModuloService
     public List<Modulo> list() {
         return mR.findAll();
     }
+
+    @Override
+    public void delete(int idModulo){
+        mR.deleteById(idModulo);
+    }
+
+    public Modulo listId(int idModulo) { return mR.findById(idModulo).orElse(new Modulo());
+    }
 }

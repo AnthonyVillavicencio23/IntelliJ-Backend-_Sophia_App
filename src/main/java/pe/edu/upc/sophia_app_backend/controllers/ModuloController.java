@@ -34,4 +34,24 @@ public class ModuloController {
             return  m.map(x, ModuloDTO.class);
         }).collect(Collectors.toList());
     }
+
+    //delete
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable ("id")Integer id){
+        mS.delete(id);
+    }
+
+    @GetMapping("/{id}")
+    public ModuloDTO listId(@PathVariable("id")Integer id){
+        ModelMapper m = new ModelMapper();
+        ModuloDTO dto=m.map(mS.listId(id),ModuloDTO.class);
+        return dto;
+    }
+
+    @PutMapping
+    public void goUpdate(@RequestBody ModuloDTO dto){
+        ModelMapper m=new ModelMapper();
+        Modulo a=m.map(dto,Modulo.class);
+        mS.insert(a);
+    }
 }
