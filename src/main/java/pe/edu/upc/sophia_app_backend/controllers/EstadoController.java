@@ -2,6 +2,7 @@ package pe.edu.upc.sophia_app_backend.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.sophia_app_backend.dtos.EstadoDTO;
 import pe.edu.upc.sophia_app_backend.entities.Estado;
@@ -23,6 +24,7 @@ public class EstadoController {
         eS.insert(e);
     }
     @GetMapping
+    @PreAuthorize("hasAnyAuthority('ADMIN')")
     public List<EstadoDTO> list(){
         return eS.list().stream().map(x ->{
             ModelMapper m= new ModelMapper();

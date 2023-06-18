@@ -3,6 +3,7 @@ package pe.edu.upc.sophia_app_backend.controllers;
 import io.swagger.models.Model;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.sophia_app_backend.dtos.CursoDTO;
 import pe.edu.upc.sophia_app_backend.entities.Curso;
@@ -20,6 +21,7 @@ public class CursoController
     private ICursoService cS;
 
     @PostMapping
+    @PreAuthorize("hasAnyAuthority('ADMIN')")
     public void insert (@RequestBody CursoDTO dto)
     {
         ModelMapper m = new ModelMapper();

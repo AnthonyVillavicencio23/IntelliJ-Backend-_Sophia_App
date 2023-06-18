@@ -2,6 +2,7 @@ package pe.edu.upc.sophia_app_backend.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.sophia_app_backend.dtos.CatcitaDTO;
 import pe.edu.upc.sophia_app_backend.entities.CatCita;
@@ -16,12 +17,14 @@ public class CatcitaController {
     @Autowired
     private ICatcitaService catS;
     @PostMapping
+    @PreAuthorize("hasAnyAuthority('ADMIN')")
     public void insert(@RequestBody CatcitaDTO dto){
         ModelMapper m = new ModelMapper();
         CatCita cc = m.map(dto, CatCita.class);
         catS.insert(cc);
     }
     @GetMapping
+    @PreAuthorize("hasAnyAuthority('ADMIN')")
     public List<CatcitaDTO> list(){
         return catS.list().stream().map(x->{
             ModelMapper m = new ModelMapper();

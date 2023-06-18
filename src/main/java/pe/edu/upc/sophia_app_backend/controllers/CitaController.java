@@ -3,6 +3,7 @@ package pe.edu.upc.sophia_app_backend.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.sophia_app_backend.dtos.CitaDTO;
 import pe.edu.upc.sophia_app_backend.entities.Cita;
@@ -19,6 +20,7 @@ public class CitaController {
     private ICitaService cS;
 
     @PostMapping
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'ESTUDIANTE', 'TUTOR')")
     public void insert (@RequestBody CitaDTO dto)
     {
         ModelMapper m = new ModelMapper();
@@ -28,6 +30,7 @@ public class CitaController {
     }
 
     @GetMapping
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'PSICOLOGO')")
     public List<CitaDTO> list()
     {
         return cS.list().stream().map(x ->
