@@ -2,9 +2,6 @@ package pe.edu.upc.sophia_app_backend.dtos;
 
 import pe.edu.upc.sophia_app_backend.entities.Tutor;
 
-import javax.persistence.Column;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import java.time.LocalDate;
 
 public class EstudianteDTO

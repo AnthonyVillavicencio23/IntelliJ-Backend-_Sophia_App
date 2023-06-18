@@ -16,14 +16,14 @@ public class Psicologo {
     private String apMatPsicologo;
     @Column(name = "fechaNacimiento", nullable = false)
     private LocalDate fechaNacimiento;
-    @Column(name = "especialidad", length = 30, nullable = false)
-    private String especialidad;
+    @ManyToOne
+    @JoinColumn(name = "idEspecialidad")
+    private Especialidad especialidad;
 
     public Psicologo() {
     }
 
-    public Psicologo(int idPsicologo, String nombrePsico, String apPatPsicologo, String apMatPsicologo,
-                     LocalDate fechaNacimiento, String especialidad) {
+    public Psicologo(int idPsicologo, String nombrePsico, String apPatPsicologo, String apMatPsicologo, LocalDate fechaNacimiento, Especialidad especialidad) {
         this.idPsicologo = idPsicologo;
         this.nombrePsico = nombrePsico;
         this.apPatPsicologo = apPatPsicologo;
@@ -72,11 +72,11 @@ public class Psicologo {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    public String getEspecialidad() {
+    public Especialidad getEspecialidad() {
         return especialidad;
     }
 
-    public void setEspecialidad(String especialidad) {
+    public void setEspecialidad(Especialidad especialidad) {
         this.especialidad = especialidad;
     }
 }

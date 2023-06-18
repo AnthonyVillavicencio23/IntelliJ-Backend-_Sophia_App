@@ -1,5 +1,7 @@
 package pe.edu.upc.sophia_app_backend.dtos;
 
+import pe.edu.upc.sophia_app_backend.entities.Especialidad;
+
 import java.time.LocalDate;
 
 public class PsicologoDTO {
@@ -8,8 +10,7 @@ public class PsicologoDTO {
     private String apPatPsicologo;
     private String apMatPsicologo;
     private LocalDate fechaNacimiento;
-    private String especialidad;
-
+    private Especialidad especialidad;
 
     public int getIdPsicologo() {
         return idPsicologo;
@@ -51,11 +52,11 @@ public class PsicologoDTO {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    public String getEspecialidad() {
+    public Especialidad getEspecialidad() {
         return especialidad;
     }
 
-    public void setEspecialidad(String especialidad) {
+    public void setEspecialidad(Especialidad especialidad) {
         this.especialidad = especialidad;
     }
 }
