@@ -24,7 +24,6 @@ public class CatcitaController {
         catS.insert(cc);
     }
     @GetMapping
-    @PreAuthorize("hasAnyAuthority('ADMIN')")
     public List<CatcitaDTO> list(){
         return catS.list().stream().map(x->{
             ModelMapper m = new ModelMapper();

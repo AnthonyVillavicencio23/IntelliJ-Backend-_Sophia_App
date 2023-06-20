@@ -30,7 +30,6 @@ public class CitaController {
     }
 
     @GetMapping
-    @PreAuthorize("hasAnyAuthority('ADMIN', 'PSICOLOGO')")
     public List<CitaDTO> list()
     {
         return cS.list().stream().map(x ->
