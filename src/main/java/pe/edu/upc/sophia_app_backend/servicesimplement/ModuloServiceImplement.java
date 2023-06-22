@@ -45,4 +45,20 @@ public class ModuloServiceImplement implements IModuloService
 
         return moduloxCursoDTOs;
     }
+
+    @Override
+    public List<moduloxCursoDTO> reportes02an() {
+
+        List<String[]> buscarCurso_menos_modulos = mR.BuscarCurso_menos_Modulos();
+        List<moduloxCursoDTO> moduloxCursoDTOs = new ArrayList<>();
+
+        for (String[] data : buscarCurso_menos_modulos) {
+            moduloxCursoDTO dto = new moduloxCursoDTO();
+            dto.setNameCurso(data[0]);
+            dto.setModulo_contador(Integer.parseInt(data[1]));
+            moduloxCursoDTOs.add(dto);
+        }
+
+        return moduloxCursoDTOs;
+    }
 }

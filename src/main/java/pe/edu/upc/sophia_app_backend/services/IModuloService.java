@@ -15,5 +15,8 @@ public interface IModuloService {
 
     public List<moduloxCursoDTO> reportes01an();
 
+    public List<moduloxCursoDTO> reportes02an();
+
+
 
 }

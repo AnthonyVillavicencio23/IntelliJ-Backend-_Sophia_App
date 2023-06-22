@@ -65,4 +65,12 @@ public class ModuloController {
         List<moduloxCursoDTO> moduloxCursoDTOs = mS.reportes01an();
         return moduloxCursoDTOs;
     }
+
+    @GetMapping("/modulo-menos-cursos")
+    @PreAuthorize("hasAnyAuthority('ADMIN')")
+    public List<moduloxCursoDTO> BuscarCurso_menos_Modulos() {
+        List<moduloxCursoDTO> moduloxCursoDTOs = mS.reportes02an();
+        return moduloxCursoDTOs;
+    }
+
 }

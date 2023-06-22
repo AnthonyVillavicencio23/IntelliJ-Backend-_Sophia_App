@@ -16,4 +16,9 @@ public interface IModuloRepository extends JpaRepository<Modulo, Integer>
             "group by c.name_curso ORDER BY COUNT(c.name_curso) DESC", nativeQuery = true)
     List<String[]> contarModulosxCursos();
 
+    @Query(value = "SELECT c.name_curso ,count(m.id_modulo) from modulos m \n" +
+            "join curso c on  m.idcurso = c.idcurso \n" +
+            "group by c.name_curso ORDER BY COUNT(c.name_curso) ASC LIMIT 2", nativeQuery = true)
+    List<String[]> BuscarCurso_menos_Modulos();
+
 }
