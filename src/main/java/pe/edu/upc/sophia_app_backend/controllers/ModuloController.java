@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.sophia_app_backend.dtos.ModuloDTO;
+import pe.edu.upc.sophia_app_backend.dtos.moduloxCursoDTO;
 import pe.edu.upc.sophia_app_backend.entities.Modulo;
 import pe.edu.upc.sophia_app_backend.services.IModuloService;
 
@@ -57,4 +58,19 @@ public class ModuloController {
         Modulo a=m.map(dto,Modulo.class);
         mS.insert(a);
     }
+
+    @GetMapping("/modulo-contar")
+    @PreAuthorize("hasAnyAuthority('ADMIN')")
+    public List<moduloxCursoDTO> contarModulosxCursos() {
+        List<moduloxCursoDTO> moduloxCursoDTOs = mS.reportes01an();
+        return moduloxCursoDTOs;
+    }
+
+    @GetMapping("/modulo-menos-cursos")
+    @PreAuthorize("hasAnyAuthority('ADMIN')")
+    public List<moduloxCursoDTO> BuscarCurso_menos_Modulos() {
+        List<moduloxCursoDTO> moduloxCursoDTOs = mS.reportes02an();
+        return moduloxCursoDTOs;
+    }
+
 }
