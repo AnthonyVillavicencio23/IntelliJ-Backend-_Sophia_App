@@ -4,6 +4,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.sophia_app_backend.dtos.TarjetaDTO;
+import pe.edu.upc.sophia_app_backend.dtos.TarjetaTutorDTO;
 import pe.edu.upc.sophia_app_backend.entities.Tarjeta;
 import pe.edu.upc.sophia_app_backend.services.ITarjetaService;
 
@@ -54,6 +55,16 @@ public class TarjetaController
     @DeleteMapping("/{id}")
     void delete(@PathVariable("id") Integer id){
         tA.delete(id);
+    }
+
+    @GetMapping("/countTarjetasDebito")
+    public int countTarjetasDebito() {
+        return tA.countTarjetasDebito();
+    }
+
+    @GetMapping("/cantidadTarjetasPorTutor")
+    public List<TarjetaTutorDTO> cantidadTarjetasPorTutor() {
+        return tA.cantidadTarjetasPorTutor();
     }
 
 
