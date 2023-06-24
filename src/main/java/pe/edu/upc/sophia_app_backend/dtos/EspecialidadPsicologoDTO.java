@@ -3,22 +3,12 @@ package pe.edu.upc.sophia_app_backend.dtos;
 public class EspecialidadPsicologoDTO {
     private String nombre;
     private String nombrePsico;
-    private int psicologoContar;
 
     public EspecialidadPsicologoDTO() {
     }
 
-    public EspecialidadPsicologoDTO(String nombre, String nombrePsico,  int psicologoContar) {
+    public EspecialidadPsicologoDTO(String nombre, String nombrePsico) {
         this.nombre = nombre;
-        this.nombrePsico = nombrePsico;
-        this.psicologoContar = psicologoContar;
-    }
-
-    public String getNombrePsico() {
-        return nombrePsico;
-    }
-
-    public void setNombrePsico(String nombrePsico) {
         this.nombrePsico = nombrePsico;
     }
 
@@ -30,13 +20,11 @@ public class EspecialidadPsicologoDTO {
         this.nombre = nombre;
     }
 
-
-
-    public int getPsicologoContar() {
-        return psicologoContar;
+    public String getNombrePsico() {
+        return nombrePsico;
     }
 
-    public void setPsicologoContar(int psicologoContar) {
-        this.psicologoContar = psicologoContar;
+    public void setNombrePsico(String nombrePsico) {
+        this.nombrePsico = nombrePsico;
     }
 }

@@ -61,4 +61,10 @@ public class PsicologoController {
         return psicologoEspecialidadDTOs;
     }
 
+    @GetMapping("/especialidades-count")
+    @PreAuthorize("hasAnyAuthority('ADMIN')")
+    public List<EspecialidadPsicologoDTO> getContar_mayor_Especialidad() {
+        List<EspecialidadPsicologoDTO> psicologoEspecialidadDTOs = aS.reporte02st();
+        return psicologoEspecialidadDTOs;
+    }
 }

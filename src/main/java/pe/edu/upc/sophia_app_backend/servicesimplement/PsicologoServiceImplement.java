@@ -41,7 +41,21 @@ public class PsicologoServiceImplement implements IPsicologoService {
             EspecialidadPsicologoDTO dto = new EspecialidadPsicologoDTO();
             dto.setNombre(data[0]);
             dto.setNombrePsico(data[1]);
-            dto.setPsicologoContar(Integer.parseInt(data[2]));
+            psicologoEspecialidadDTOs.add(dto);
+        }
+
+        return psicologoEspecialidadDTOs;
+    }
+
+    @Override
+    public List<EspecialidadPsicologoDTO> reporte02st() {
+        List<String[]> Contar_mayor_Especialidad = aR.getContar_mayor_Especialidad();
+        List<EspecialidadPsicologoDTO> psicologoEspecialidadDTOs = new ArrayList<>();
+
+        for (String[] data : Contar_mayor_Especialidad) {
+            EspecialidadPsicologoDTO dto = new EspecialidadPsicologoDTO();
+            dto.setNombre(data[0]);
+            dto.setNombrePsico(data[1]);
             psicologoEspecialidadDTOs.add(dto);
         }
 

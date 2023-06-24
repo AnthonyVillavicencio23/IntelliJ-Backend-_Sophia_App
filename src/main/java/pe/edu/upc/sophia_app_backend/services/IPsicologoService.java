@@ -14,4 +14,5 @@ public interface IPsicologoService {
 
     public Psicologo listId(int idPsicologo);
     public  List<EspecialidadPsicologoDTO> reporte01st();
+    public  List<EspecialidadPsicologoDTO> reporte02st();
 }
