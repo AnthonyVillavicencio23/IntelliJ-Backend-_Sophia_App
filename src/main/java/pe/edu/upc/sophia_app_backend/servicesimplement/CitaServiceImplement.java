@@ -2,6 +2,7 @@ package pe.edu.upc.sophia_app_backend.servicesimplement;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pe.edu.upc.sophia_app_backend.dtos.CitaCatDTO;
 import pe.edu.upc.sophia_app_backend.dtos.CitaPsicoDTO;
 import pe.edu.upc.sophia_app_backend.entities.Cita;
 import pe.edu.upc.sophia_app_backend.repositories.ICitaRepository;
@@ -27,14 +28,29 @@ public class CitaServiceImplement implements ICitaService {
     }
 
     @Override
-    public List<CitaPsicoDTO> reporte01El() {
+    public List<CitaCatDTO> reporte01El() {
         List<String[]> countPsicologoByCat = cR.getCountPsicologoByCat();
-        List<CitaPsicoDTO> citaPsicoDTOs = new ArrayList<>();
+        List<CitaCatDTO> citaCatDTOs = new ArrayList<>();
 
         for (String[] data : countPsicologoByCat) {
+            CitaCatDTO dto = new CitaCatDTO();
+            dto.setNombreCita(data[0]);
+            dto.setNombrePsico(data[1]);
+            dto.setCountCita(Integer.parseInt(data[2]));
+            citaCatDTOs.add(dto);
+        }
+
+        return citaCatDTOs;
+    }
+
+    @Override
+    public List<CitaPsicoDTO> reporte02El() {
+        List<String[]> countCitaByPsico = cR.getCountCitaByPsico();
+        List<CitaPsicoDTO> citaPsicoDTOs = new ArrayList<>();
+
+        for (String[] data : countCitaByPsico) {
             CitaPsicoDTO dto = new CitaPsicoDTO();
-            dto.setNamePsico(data[0]);
-            dto.setNameCat(data[0]);
+            dto.setNombrePsico(data[0]);
             dto.setCountCita(Integer.parseInt(data[1]));
             citaPsicoDTOs.add(dto);
         }

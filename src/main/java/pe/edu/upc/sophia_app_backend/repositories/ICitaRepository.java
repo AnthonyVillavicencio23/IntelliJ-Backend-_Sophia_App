@@ -10,11 +10,16 @@ import java.util.List;
 @Repository
 public interface ICitaRepository extends JpaRepository<Cita, Integer> {
 
-    @Query(value = "SELECT  c.nombre_cita, p.nombre_psico, COUNT (*) AS total_citas\n" +
-            "FROM cat_citas c\n" +
-            "JOIN citas ci ON c.idcat_cita = ci.idcat_cita \n" +
-            "JOIN psicologos p ON ci.id_psicologo = p.id_psicologo \n" +
-            "GROUP BY c.nombre_cita, p.nombre_psico\n" +
-            "order by total_citas  ", nativeQuery = true)
+    @Query(value = "SELECT  c.nombre_cita,(p.nombre_psico ||' '||p.ap_pat_psicologo || ' '|| p.ap_mat_psicologo) as Psicologo, count(ci.id_cita) from citas ci\n" +
+            "join cat_citas c on ci.idcat_cita = c.idcat_cita \n" +
+            "join psicologos p on ci.id_psicologo = p.id_psicologo \n" +
+            "group by c.nombre_cita, Psicologo ORDER BY COUNT(ci.id_cita) ", nativeQuery = true)
     List<String[]> getCountPsicologoByCat();
+
+    @Query(value = "SELECT (p.nombre_psico ||' '||p.ap_pat_psicologo || ' '|| p.ap_mat_psicologo) as Psicologo , count(ci.id_cita)\n" +
+            "from citas ci\n" +
+            "join psicologos p on ci.id_psicologo = p.id_psicologo \n" +
+            "where ci.id_estado = 3\n" +
+            "group by  Psicologo ORDER BY COUNT(ci.id_cita) ", nativeQuery = true)
+    List<String[]> getCountCitaByPsico();
 }

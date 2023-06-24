@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.sophia_app_backend.dtos.CitaDTO;
+import pe.edu.upc.sophia_app_backend.dtos.CitaCatDTO;
 import pe.edu.upc.sophia_app_backend.dtos.CitaPsicoDTO;
 import pe.edu.upc.sophia_app_backend.entities.Cita;
 import pe.edu.upc.sophia_app_backend.services.ICitaService;
@@ -40,8 +41,15 @@ public class CitaController {
         }).collect(Collectors.toList());
     }
     @GetMapping("/citas-count")
-    public List<CitaPsicoDTO> getCountPsicologoByCat() {
-        List<CitaPsicoDTO> citaPsicoDTOs = cS.reporte01El();
+    @PreAuthorize("hasAnyAuthority('ADMIN')")
+    public List<CitaCatDTO> getCountPsicologoByCat() {
+        List<CitaCatDTO> citaCatDTOs = cS.reporte01El();
+        return citaCatDTOs;
+    }
+    @GetMapping("/citas-count-psicologo")
+    @PreAuthorize("hasAnyAuthority('ADMIN')")
+    public List<CitaPsicoDTO> getCountCitaByPsico() {
+        List<CitaPsicoDTO> citaPsicoDTOs = cS.reporte02El();
         return citaPsicoDTOs;
     }
 }
