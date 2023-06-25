@@ -9,7 +9,7 @@ import java.util.List;
 public interface ITarjetaRepository extends JpaRepository<Tarjeta, Integer> {
     @Query(value = "select count (*)\n" +
             "from tarjetas\n" +
-            "where tipo_tarjeta='D'", nativeQuery = true)
+            "where tipo_tarjeta='Debito'", nativeQuery = true)
     int countTarjetasDebito();
     @Query(value = "select concat(tu.nombre_tutor, tu.apellido_pat_tutor), count(*) from tarjetas t \n" +
             "inner  join tutor tu on t.id_tutor = tu.id_tutor group by \n" +
