@@ -2,8 +2,10 @@ package pe.edu.upc.sophia_app_backend.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.sophia_app_backend.dtos.PruebaEvaluacionDTO;
+import pe.edu.upc.sophia_app_backend.dtos.PruebaEvaluacionRendidoDTO;
 import pe.edu.upc.sophia_app_backend.entities.PruebaEvaluacion;
 import pe.edu.upc.sophia_app_backend.services.IPruebaEvaluacionService;
 
@@ -52,5 +54,19 @@ public class PruebaEvaluacionController {
     @DeleteMapping("/{id}")
     void delete(@PathVariable("id") Integer id){
         pE.delete(id);
+    }
+
+    @GetMapping("/evaluacion-contar")
+    @PreAuthorize("hasAnyAuthority('ADMIN')")
+    public List<PruebaEvaluacionRendidoDTO> contarEvaluacionxRendido() {
+        List<PruebaEvaluacionRendidoDTO> evaluacionxRendidoDTOs = pE.reportes01pa();
+        return evaluacionxRendidoDTOs;
+    }
+
+    @GetMapping("/evaluacion-menos-rendido")
+    @PreAuthorize("hasAnyAuthority('ADMIN')")
+    public List<PruebaEvaluacionRendidoDTO> BuscarRendido_menos_Evaluacion() {
+        List<PruebaEvaluacionRendidoDTO> evaluacionxRendidoDTOs = pE.reportes02pa();
+        return evaluacionxRendidoDTOs;
     }
 }
